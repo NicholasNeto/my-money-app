@@ -1,8 +1,23 @@
-import React from 'react'
+import React, {Component} from 'react'
+
+import  CompoentHeader  from '../commun/templete/contentHeader'
+import  Content  from '../commun/templete/content'
 
 
-export default props => (
-    <div>
-        <h1>Dashboard</h1>
-    </div>
-)
+class Dashboard extends Component {
+
+    render(){
+
+        return (
+            <div>
+                <CompoentHeader title={"Dashboard"} subTitle={"tetse"} />
+                <Content>
+                    Dashboard
+                </Content>
+            </div>
+        )
+    }
+}
+
+
+export default Dashboard
