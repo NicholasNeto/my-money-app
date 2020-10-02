@@ -9,9 +9,9 @@ import React from 'react'
 
 export default props => (
     <div className="wrapper">
-        <Header  />
+        <Header />
         <SideBar />
-        <div  className='content-wrapper'>
+        <div className='content-wrapper'>
             <Routes />
         </div>
         <Foolter />
