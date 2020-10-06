@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
+import { getSummary } from './dashboardActions'
 import CompoentHeader from '../commun/templete/contentHeader'
 import Content from '../commun/templete/content'
 import ValueBox from '../commun/widget/valueBox'
@@ -9,9 +11,13 @@ import Row from '../commun/layout/row'
 
 class Dashboard extends Component {
 
+    componentWillMount() {
+        this.props.getSummary()
+    }
+
     render() {
 
-        const {credit, debt} =  this.props.summary
+        const { credit, debt } = this.props.summary
 
         return (
             <div>
@@ -30,4 +36,5 @@ class Dashboard extends Component {
 
 
 const mapStateToProps = state => ({ summary: state.dashboard.summary })
-export default connect(mapStateToProps)(Dashboard)
+const mapDispatchToProps = dispatch => bindActionCreators({ getSummary }, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
