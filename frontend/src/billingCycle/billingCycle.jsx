@@ -5,8 +5,11 @@ import Content from '../commun/templete/content'
 
 
 import Tabs from '../commun/tab/tabs'
-import TabsHeader from '../commun/tab/tabsHeader'
-import TabsContent from '../commun/tab/tabsContent'
+import TabsHeader from '../commun/tab/tabs-header'
+import TabsContent from '../commun/tab/tabs-content'
+import TabHeader from '../commun/tab/tab-header'
+
+
 
 class BillingCycle extends Component {
     constructor(props) {
@@ -20,7 +23,12 @@ class BillingCycle extends Component {
                 <ContentHeader title={"Ciclos de Pagamentos"} small={"Cadastro"} />
                 <Content>
                     <Tabs>
-                        <TabsHeader></TabsHeader>
+                        <TabsHeader>
+                            <TabHeader label={'Listar'} icon={'bars'} target={'tabList'} />
+                            <TabHeader label={'Incluir'} icon={'plus'} target={'tabCreate'} />
+                            <TabHeader label={'Alterar'} icon={'pencil'} target={'tabUpdate'} />
+                            <TabHeader label={'Excluir'} icon={'trash-o'} target={'tabDelete'} />
+                        </TabsHeader>
                         <TabsContent></TabsContent>
                     </Tabs>
 
