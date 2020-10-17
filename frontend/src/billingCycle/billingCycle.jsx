@@ -8,15 +8,11 @@ import Tabs from '../commun/tab/tabs'
 import TabsHeader from '../commun/tab/tabs-header'
 import TabsContent from '../commun/tab/tabs-content'
 import TabHeader from '../commun/tab/tab-header'
+import TabContent from '../commun/tab/tab-content'
 
 
 
 class BillingCycle extends Component {
-    constructor(props) {
-        super(props)
-        this.state = { slected: null }
-    }
-
     render() {
         return (
             <div>
@@ -29,14 +25,17 @@ class BillingCycle extends Component {
                             <TabHeader label={'Alterar'} icon={'pencil'} target={'tabUpdate'} />
                             <TabHeader label={'Excluir'} icon={'trash-o'} target={'tabDelete'} />
                         </TabsHeader>
-                        <TabsContent></TabsContent>
+                        <TabsContent>
+                            <TabContent id={'tabList'} ><h1>Lista</h1></TabContent>
+                            <TabContent id={'tabCreate'} ><h1>Incluir</h1></TabContent>
+                            <TabContent id={'tabUpdate'} ><h1>Alterar</h1></TabContent>
+                            <TabContent id={'tabDelete'} ><h1>Excluir</h1></TabContent>
+                        </TabsContent>
                     </Tabs>
-
                 </Content>
             </div>
         )
     }
-
 }
 
 export default BillingCycle
