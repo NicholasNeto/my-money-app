@@ -9,7 +9,6 @@ class Tabs extends Component {
             </div>
         )
     }
-
 }
 
 export default Tabs
