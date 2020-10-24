@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {bindActionCreators} from 'redux'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import ContentHeader from '../commun/templete/contentHeader'
@@ -12,12 +12,13 @@ import TabsContent from '../commun/tab/tabs-content'
 import TabHeader from '../commun/tab/tab-header'
 import TabContent from '../commun/tab/tab-content'
 import { selectTab, showTabs } from '../commun/tab/tab-actions'
+import List from './billingCycleList'
 
 
 
 class BillingCycle extends Component {
 
-    componentWillMount(){
+    componentWillMount() {
         this.props.selectTab('tabList')
         this.props.showTabs("tabList", "tabCreate")
     }
@@ -35,6 +36,7 @@ class BillingCycle extends Component {
                             <TabHeader label={'Excluir'} icon={'trash-o'} target={'tabDelete'} />
                         </TabsHeader>
                         <TabsContent>
+                            < List />
                             <TabContent id={'tabList'} ><h1>Lista</h1></TabContent>
                             <TabContent id={'tabCreate'} ><h1>Incluir</h1></TabContent>
                             <TabContent id={'tabUpdate'} ><h1>Alterar</h1></TabContent>
