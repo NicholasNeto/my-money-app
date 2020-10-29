@@ -5,9 +5,19 @@ import { getList } from './billingCycleActions'
 
 
 class BillingCycleList extends Component {
-
     componentWillMount() {
         this.props.getList()
+    }
+
+    renderRows() {
+        const list = this.props.list || []
+        return list.map(it =>
+            <tr key={it._id} >
+                <td>{it.name}</td>
+                <td>{it.month}</td>
+                <td>{it.year}</td>
+            </tr>
+        )
     }
 
     render() {
@@ -24,7 +34,7 @@ class BillingCycleList extends Component {
                         </tr>
                     </thead>
                     <tbody>
-
+                        {this.renderRows()}
                     </tbody>
                 </table>
             </div>
