@@ -1,14 +1,12 @@
 const _ = require('lodash')
 
 
-module.exports = (req, res, next ) => {
-    console.log("res ---> ". res)
-    const bunble =  res.locals.bunble || {}
-
-    if(bunble.errors){
+module.exports = (req, res, next) => {
+    const bunble = res.locals
+    if (bunble.errors) {
         const errors = parseErrors(bunble.errors)
-        res.status(500).json({errors});
-    }else{
+        res.status(500).json({ errors });
+    } else {
         next()
     }
 }
