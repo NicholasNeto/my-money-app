@@ -4,7 +4,7 @@ import SideBar from '../commun/templete/side-bar'
 import Foolter from '../commun/templete/foolter'
 import Routes from './routes'
 import React from 'react'
-
+import Messages from '../commun/msg/messages'
 
 
 export default props => (
@@ -15,5 +15,6 @@ export default props => (
             <Routes />
         </div>
         <Foolter />
+        <Messages />
     </div>
 )
