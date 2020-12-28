@@ -21,11 +21,12 @@ import { create } from './billingCycleActions'
 class BillingCycle extends Component {
 
     componentWillMount() {
-        this.props.selectTab('tabList')
+         this.props.selectTab('tabList')
         this.props.showTabs("tabList", "tabCreate")
     }
 
     render() {
+
         return (
             <div>
                 <ContentHeader title={"Ciclos de Pagamentos"} small={"Cadastro"} />
@@ -38,7 +39,9 @@ class BillingCycle extends Component {
                             <TabHeader label={'Excluir'} icon={'trash-o'} target={'tabDelete'} />
                         </TabsHeader>
                         <TabsContent>
-                            <TabContent id={'tabList'} >< List /></TabContent>
+                            <TabContent id={'tabList'} >
+                                < List />
+                            </TabContent>
                             <TabContent id={'tabCreate'} >
                                 <BillingCycleForm onSubmit={this.props.create} />
                             </TabContent>
