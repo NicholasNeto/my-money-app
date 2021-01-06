@@ -37,3 +37,10 @@ export function create(values) {
         type: 'TEMP',
     }
 }
+
+export function showUpdate(billingCycle){
+    return [
+        showTabs('tabUpdate'), 
+        selectTab('tabUpdate'), 
+    ]
+}
