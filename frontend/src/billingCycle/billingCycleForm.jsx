@@ -41,7 +41,7 @@ class BillingCycleForm extends Component {
             readOnly={readOnly}
           />
           <ItemList cols="12 6" list={credits} readOnly={readOnly} legend='Creditos' field='credits' />
-          <ItemList cols="12 6" list={debts} readOnly={readOnly} legend='Debitos' field='debts' />
+          <ItemList cols="12 6" list={debts} readOnly={readOnly} legend='Debitos'showStatus={true} field='debts' />
         </div>
         <div className='box-footer'>
           <button type='submit' className={`btn btn-${this.props.submitClass}`}>{this.props.submitLabel}</button>

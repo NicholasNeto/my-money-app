@@ -1,25 +1,26 @@
 import React, { Component } from 'react'
 import { Field, arrayInsert, arrayRemove } from 'redux-form'
 import Grid from '../commun/layout/grid'
-import { connect} from 'react-redux'
-import {bindActionCreators} from 'redux'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 
 import Input from '../commun/form/input'
+import If from '../commun/operator/if'
 
 
 class ItemList extends Component {
 
     add(index, item = {}) {
-        if(!this.props.readOnly){
+        if (!this.props.readOnly) {
             this.props.arrayInsert("billingCycleForm", `${this.props.field}`, index, item)
-        } 
+        }
     }
 
     remove(index) {
-        if(!this.props.readOnly && this.props.list.length > 1){
+        if (!this.props.readOnly && this.props.list.length > 1) {
             this.props.arrayRemove("billingCycleForm", `${this.props.field}`, index)
-        } 
+        }
     }
 
     renderRows() {
@@ -28,6 +29,9 @@ class ItemList extends Component {
             <tr key={index}>
                 <td><Field name={`${this.props.field}[${index}].name`} component={Input} placeholder='Informe o nome' readOnly={this.props.readOnly} /></td>
                 <td><Field name={`${this.props.field}[${index}].value`} component={Input} placeholder='Informe o valor' readOnly={this.props.readOnly} /></td>
+                <If test={this.props.showStatus}>
+                <td><Field name={`${this.props.field}[${index}].status`} component={Input} placeholder='Informe o Status' readOnly={this.props.readOnly} /></td>
+                </If>
                 <td>
                     <button
                         type="button"
@@ -62,6 +66,9 @@ class ItemList extends Component {
                             <tr>
                                 <th>Nome</th>
                                 <th>Valor</th>
+                                <If test={this.props.showStatus}>
+                                    <th>Status</th>
+                                </If>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -76,5 +83,5 @@ class ItemList extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({ arrayInsert, arrayRemove}, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators({ arrayInsert, arrayRemove }, dispatch);
 export default connect(null, mapDispatchToProps)(ItemList);
