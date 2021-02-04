@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import { init } from './billingCycleActions'
 import LabelAndInput from '../commun/form/labelAndInput';
 import ItemList from './itemList'
+import Summary from './summary'
 
 class BillingCycleForm extends Component {
 
@@ -40,6 +41,7 @@ class BillingCycleForm extends Component {
             label='Ano'
             readOnly={readOnly}
           />
+          <Summary credits={1000} debts={500} />
           <ItemList cols="12 6" list={credits} readOnly={readOnly} legend='Creditos' field='credits' />
           <ItemList cols="12 6" list={debts} readOnly={readOnly} legend='Debitos'showStatus={true} field='debts' />
         </div>
