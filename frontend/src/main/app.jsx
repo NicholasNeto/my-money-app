@@ -1,5 +1,4 @@
 import React from 'react'
-import { HashRouter } from 'react-router-dom'
 
 import Header from '../commun/templete/header'
 import SideBar from '../commun/templete/side-bar'
@@ -8,7 +7,7 @@ import Messages from '../commun/msg/messages'
 
 import Routes from './routes'
 
-export default props => (
+const App = () => (
     <div className="wrapper">
         <Header />
         <SideBar />
@@ -17,3 +16,5 @@ export default props => (
         <Messages />
     </div>
 )
+
+export default App
