@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default props => (
+const Input = (props) => (
     <input
         {...props.input}
         className='form-control'
@@ -9,3 +9,5 @@ export default props => (
         type={props.type}
     />
 )
+
+export default Input
