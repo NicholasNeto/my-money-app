@@ -1,8 +1,7 @@
 import React from 'react'
 import Navbar from './navbar'
 
-
-export default props => (
+ const Header = (props) => (
     <header className='main-header'>
         <a href='/#/' className='logo'>
             <span className='logo-mini'><b>My</b>M</span>
@@ -17,3 +16,5 @@ export default props => (
         </nav>
     </header>
 )
+
+export default Header
