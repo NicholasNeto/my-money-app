@@ -22,7 +22,7 @@ class BillingCycleForm extends Component {
     const { sumOfCredits, sumOfDebits } = this.calculateSummary()
 
     return (
-      <form role="form" onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit}>
         <div className='box-body'>
           <Field
             name='name'
@@ -52,7 +52,7 @@ class BillingCycleForm extends Component {
           />
           <Summary credits={sumOfCredits} debts={sumOfDebits} />
           <ItemList cols="12 6" list={credits} readOnly={readOnly} legend='Creditos' field='credits' />
-          <ItemList cols="12 6" list={debts} readOnly={readOnly} legend='Debitos'showStatus={true} field='debts' />
+          <ItemList cols="12 6" list={debts} readOnly={readOnly} legend='Debitos' showStatus={true} field='debts' />
         </div>
         <div className='box-footer'>
           <button type='submit' className={`btn btn-${this.props.submitClass}`}>{this.props.submitLabel}</button>
