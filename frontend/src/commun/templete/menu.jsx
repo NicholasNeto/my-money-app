@@ -3,7 +3,7 @@ import MenuItem from '../templete/menu-item'
 import MenuTree from '../templete/menu-tree'
 
 
-export default props => (
+const Menu = (props) => (
 
   <ul className='sidebar-menu'>
     <MenuItem path="/" label="Dashboard" icon='dashboard' />
@@ -12,3 +12,5 @@ export default props => (
     </MenuTree>
   </ul>
 )
+
+export default Menu
