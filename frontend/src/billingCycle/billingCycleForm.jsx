@@ -22,8 +22,7 @@ class BillingCycleForm extends Component {
 
     let sumOfCredits, sumOfDebits
     if (credits && debts) {
-      sumOfCredits, sumOfDebits = this.calculateSummary(credits, debts)
-      return { sumOfCredits, sumOfDebits }
+      return { sumOfCredits, sumOfDebits } = this.calculateSummary(credits, debts)
     }
 
     return (
