@@ -11,7 +11,7 @@ import Navbar from './navbar'
             </span>
         </a>
         <nav className='navbar navbar-static-top'>
-            <a href className='sidebar-toggle' data-toggle='offcanvas'></a>
+            <button href className='sidebar-toggle' data-toggle='offcanvas'></button>
             <Navbar />
         </nav>
     </header>
