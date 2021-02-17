@@ -9,20 +9,25 @@ import Summary from './summary'
 
 class BillingCycleForm extends Component {
 
-  calculateSummary() {
+  calculateSummary(credits, debts) {
     const sum = (acumulador, currenteValue) => acumulador + currenteValue;
     return {
-      sumOfCredits: this.props.credits.map(it => +it.value || 0).reduce(sum),
-      sumOfDebits: this.props.debts.map(it => +it.value || 0).reduce(sum),
+      sumOfCredits: credits.map(it => +it.value || 0).reduce(sum),
+      sumOfDebits: debts.map(it => +it.value || 0).reduce(sum),
     }
   }
 
   render() {
     const { handleSubmit, readOnly, credits, debts } = this.props
-    const { sumOfCredits, sumOfDebits } = this.calculateSummary()
+
+    let sumOfCredits, sumOfDebits
+    if (credits && debts) {
+      sumOfCredits, sumOfDebits = this.calculateSummary(credits, debts)
+      return { sumOfCredits, sumOfDebits }
+    }
 
     return (
-      <form  onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div className='box-body'>
           <Field
             name='name'
