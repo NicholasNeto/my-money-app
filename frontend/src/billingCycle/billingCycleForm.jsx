@@ -19,12 +19,8 @@ class BillingCycleForm extends Component {
 
   render() {
     const { handleSubmit, readOnly, credits, debts } = this.props
-
-    let sumOfCredits, sumOfDebits
-    if (credits && debts) {
-      return { sumOfCredits, sumOfDebits } = this.calculateSummary(credits, debts)
-    }
-
+    const { sumOfCredits, sumOfDebits } = this.calculateSummary(credits, debts)
+    
     return (
       <form onSubmit={handleSubmit}>
         <div className='box-body'>

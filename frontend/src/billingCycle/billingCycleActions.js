@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { toastr } from 'react-redux-toastr'
-import { reset as  initialize} from 'redux-form'
+import { reset as  initialValues} from 'redux-form'
 import { showTabs, selectTab} from '../commun/tab/tab-actions'
 
 const BASE_URL = 'http://localhost:3003/api/'
@@ -45,7 +45,7 @@ export function showUpdate(billingCycle){
     return [
         showTabs('tabUpdate'), 
         selectTab('tabUpdate'), 
-        initialize('billingCycleForm', billingCycle), 
+        initialValues('billingCycleForm', billingCycle), 
     ]
 }
 
@@ -53,15 +53,16 @@ export function showDelete(billingCycle){
     return [
         showTabs('tabDelete'), 
         selectTab('tabDelete'), 
-        initialize('billingCycleForm', billingCycle), 
+        initialValues('billingCycleForm', billingCycle), 
     ]
 }
 
 export function init() {
+    debugger
     return [
         showTabs('tabList', 'tabCreate'),
         selectTab('tabList'),
         getList(),
-        initialize('billingCycleForm', INITIAL_VALUES),
+        initialValues('billingCycleForm', INITIAL_VALUES),
     ]
 }
