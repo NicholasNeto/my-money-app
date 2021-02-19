@@ -11,7 +11,7 @@
     "font-awesome": "4.7.0",
     "formik": "^2.2.6",
     "ionicons": "4.4.3",
-    "jquery": "2.2.3",
+    "jquery": "3.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "5.0.7",
